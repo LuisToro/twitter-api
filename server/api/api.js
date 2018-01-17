@@ -47,7 +47,7 @@ let db = [
 ];
 
 router.get('/', (req, res) => {
-    res.json({message: 'Bienvenido al api del taller # 1 (express)!'})
+    res.json({message: 'API taller 1'})
 });
 
 router.get('/tweets', (req, res) => {
@@ -81,14 +81,12 @@ router.put('/tweet/:id', (req, res) => {
 	   	}
    }
 
-   if (flag) {
-   	res.json({message: `tweet editado correctamente.`})
+   if (updated) {
+   	res.json({message: `tweet edited.`})
    }else{
-   	res.json({error: `hubo un problema al editar el tweet.`, info: `Quizá el :id del tweet no existe.`})
+   	res.json({info: `Tweet no existe.`})
    }
 })
-
-*/
 
 router.delete('/tweet/:id', (req, res) => {
 	

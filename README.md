@@ -76,7 +76,7 @@ Users
 		"status": true,
 		"firstname": "Git",
 		"lastname": "Hub",
-    "email": "email@github.com"
+    		"email": "email@github.com"
 	}
 	 ```
 

@@ -13,7 +13,7 @@ mongodb
 Clona el repositoio 
 
 ```
-git clone https://github.com/LuisToro/twitter-ap.git
+git clone https://github.com/LuisToro/twitter-api.git
 ```
 
 Instalas las dependencias
@@ -43,7 +43,7 @@ Users
 * POST `api/users` : Crea un nuevo usuario en base de datos.
 	* **Data Params:**
 	```json
-  status=[Boolean] (default: true)
+  	status=[Boolean] (default: true)
 	firstname=[string] (required) (maxlength: 32)
 	lastname=[string] (required) (maxlength: 32)
 	email=[string] (required) (maxlength: 64)
@@ -64,7 +64,7 @@ Users
   
   * **Data Params:**
 	```json
-  status=[Boolean]
+  	status=[Boolean]
 	firstname=[string]
 	lastname=[string]
 	email=[string]

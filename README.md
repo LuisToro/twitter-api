@@ -34,7 +34,7 @@ npm start
 
 Users
 
-* GET `api/users` : Obtienes en formato json todos los tweets almacenados en memoria.
+* GET `api/users` : Obtienes en formato json unicamente los usuarios habilitados status: true.
 
 * GET `api/users/:id` : Obtienes en formato json el usuarios correspondiente al :id enviado como parametro.
 	* **URL Params**

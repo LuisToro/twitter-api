@@ -5,7 +5,11 @@ const users = require('./users/routes');
 
 router.use('/tweets', tweets);
 router.use('/users', users)
-//router.use('');
+//router.use('');`
+
+router.get('/', (req, res) => {
+	res.send('<p>API Twitter Example.</p>');
+})
 
 
 /*

@@ -22,10 +22,11 @@ exports.all = (req, res, next) => {
     const skip = Number(req.query.skip) || 0;
     
     Model
-        .find()
+        .find({
+            status: true
+        })
         .skip(skip)
         .limit(limit)
-        .populate('author')
         .then( docs => {
             res.json({
                 data: docs,

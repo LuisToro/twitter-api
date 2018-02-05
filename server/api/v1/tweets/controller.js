@@ -18,20 +18,26 @@ exports.find = (req, res, next, id) => {
 };
 
 exports.all = (req, res, next) => {
-    const limit = Number(req.query.limit) || 10;
+    const limit = Number(req.query.limit) || 20;
     const skip = Number(req.query.skip) || 0;
     
-    Model
+    const items = Model
         .find()
         .skip(skip)
         .limit(limit)
-        .populate('author')
-        .then( docs => {
+        .populate("author")
+        .sort( { createdAt: -1 } );
+    
+    const count = Model.count();
+    
+    Promise.all([items.exec(), count.exec()])
+        .then( data => {
             res.json({
-                data: docs,
+                data: data[0],
                 limit,
-                skip
-            })
+                skip,
+                count: data[1]
+            });
         })
         .catch( err => {
             next(new Error(err));
